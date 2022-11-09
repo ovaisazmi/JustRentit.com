@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        body{
+            margin: 0px;
+            background-image: url('https://images.unsplash.com/photo-1618219740975-d40978bb7378?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }       
+        *{
+            text-align: center;
+        }
+        div{
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;  
+            border-radius: 15px;          
+            width: 450px;
+            height: 500px;
+            margin: auto;
+            border-radius: 15px;
+            padding-top: 20px;
+            background: white;
+            opacity: 90%;
+        }
+        form{
+            text-align: left;
+            width: 380px;
+            margin: auto;
+        }
+        input{
+            width: 370px;
+            height: 30px;
+            text-align: left;
+            margin: 10px auto;
+            border-radius: 10px;
+            border: none;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            padding: 10px;
+            font-weight: 600;
+            font-size:medium;
+
+        }
+        label{
+            width: 370px;
+            height: 0px;
+            text-align: left;
+            font-size: large;
+            margin-top: 10px;
+            display: block;
+            font-weight: 600;
+            font-size:large;
+
+
+        }
+        #submit{
+            text-align: center;
+            width: 380px;
+            border-radius: 10px;
+            height: 45px;
+            border: none;
+            cursor:pointer;
+            font-size: larger;
+            margin-top: 30px;
+        }
+        h2{
+            opacity: 70%;
+        }
+        a{
+            color: rgb(58, 100, 236);
+            font-size: large;
+            text-decoration: none;
+        }
+        p{
+            font-size:large;
+
+        }
+        img{
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <img src="JustRentit.Com-removebg-preview.png" alt="">
+    <div>
+        <h2>SignUp Form</h2>
+        <form action="">
+            
+            <label for="">Email</label><br>
+            <input id="email" type="email" placeholder="Enter Your Email" required><br>
+            <label for="">Mobile Number</label><br>
+            <input type="tel" pattern="[0-9]{10}" placeholder="Enter Your Number" required><br>
+            <label for="">Password</label><br>
+            <input type="password" id="password" placeholder="Enter your password" required><br>
+            <input id="submit" type="submit" value="SignUp">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        
+        </form>
+    </div>
+</body>
+</html>
+<script>
+
+    document.querySelector("form").addEventListener("submit", submit);
+    let arrEmail=JSON.parse(localStorage.getItem("arrEmail"))||[];
+    let arrPass=JSON.parse(localStorage.getItem("arrPass"))||[]
+
+    function submit(event){
+        event.preventDefault();
+        let email = document.querySelector("#email").value;
+        let password = document.querySelector("#password").value;
+
+        arrEmail.push(email);
+        arrPass.push(password);
+
+        localStorage.setItem("arrEmail",JSON.stringify(arrEmail))
+        localStorage.setItem("arrPass",JSON.stringify(arrPass))
+         
+        alert("You Have Successfully Signed in")
+        window.location.assign("login.html")
+       
+    }
+
+</script>
