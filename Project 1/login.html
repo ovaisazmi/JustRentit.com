@@ -124,8 +124,13 @@
                 break;
             }
         }
-
-        Pmatch==true && Ematch==true? alert("Login Successful"):alert("Invalide Credentials")
+        if(Pmatch==true && Ematch==true){
+            window.location.assign("index.html")
+        }else{
+            alert("Invalide Credentials")
+        }
+//         Pmatch==true && Ematch==true? alert("Login Successful") window.location.assign("login.html")
+// :alert("Invalide Credentials")
     }
     
 </script>

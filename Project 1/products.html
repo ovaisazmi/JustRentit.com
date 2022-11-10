@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            font-family: Muli, sans-serif; 
+        }
+        #nav-cont{
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
+
+        #nav{
+            width: 80vw;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            align-items: center;
+            /* border: 1px solid black; */
+         }
+         #nav>input{
+            width: 600px;
+            height: 40px;
+            border: .7px solid rgb(149, 186, 226);
+            border-radius: 10px;
+            padding: 0px 20px;
+            /* margin-left: 20px ; */
+         }
+         #nav>input:hover{
+            background-color: rgb(234, 243, 253);
+            transition: 500ms;
+         }
+         #nav>a>img{
+            width: 200px;
+         }
+         #nav>a>button{
+            width: 120px;
+            height: 40px;
+            border: none;
+            color: black;
+            background-color: rgb(251, 238, 228);
+            border-radius: 10px;
+            cursor: pointer;
+         }
+
+        #footer-cont{
+          width: 100vw;
+          height: 350px;
+          background-color:rgb(237, 240, 242)
+        }
+        #footer-cont>div{
+          width: 80%;
+          height: auto;
+          margin: auto;
+          /* border: 1px solid black; */
+          display: flex;
+        }
+        .f-card{
+          width: 25%;
+          height: auto;
+          /* border: 1px solid red; */
+          padding-top: 65px;
+        }
+        .f-card>p{
+          opacity: 70%;
+          font-weight: 100;
+          font-size: small;
+          margin: 8px 0px;
+        }
+        .f-card>input{
+          padding: 10px;
+          width: 170px;
+          font-size: small;
+          border-radius: 7px;
+          border: .7px solid black;
+          background-color:rgb(237, 240, 242)
+        }
+        #product-cont{
+          width: 80%;
+          height: auto;
+          margin: auto;
+          /* border: 1px solid black; */
+          margin-top: 50px;
+          margin-bottom: 50px;
+        }
+        #product-cont{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 15px;
+        row-gap: 17px;
+      }
+      #product-cont>div{
+        width: 93%;
+        /* border: 1px solid red; */
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      }
+      #product-cont>div>img{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      #product-cont>div button{
+        width: 100px;
+        height: 30px;
+        border: .1px solid black;
+        border-radius: 7px;
+        margin-right: 10px;
+      }
+      #product-cont>div>h5{
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-top: 0px;
+
+      }
+      #product-cont>div>div{
+        align-items: center;
+      }
+      
+    </style>
+</head>
+<body>
+    <div id="nav-cont">
+        <div id="nav">
+          <a href="index.html"><img src="/Project 1/imgages/JustRentit.Com.png" alt=""></a>
+          <input oninput="search()" type="text" placeholder="Search for products" id="searchProduct">
+          <div id="cart" style=" margin-top: 10px;width: 80px;cursor: pointer; display: flex;align-items:center; justify-content: space-between;">
+              <img style="width:30%;margin-bottom: 7px; display: inline;" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="">
+              <h4 style="display: inline;font-weight: 100;">Cart</h4>
+          </div>
+          <a href="login.html"><button>Sign Out</button></a>
+        </div>
+      </div>
+
+      <div id="product-cont"></div>
+
+      <div id="footer-cont">
+        <div>
+          <div class="f-card">
+              <h4 style="margin-bottom: 20px ;">JustRentit</h4>
+              <p>About Us</p>
+              <p>Culture</p>
+              <p>Investors</p>
+              <p>Careers</p>
+              <p>Contact</p>
+              <p>Our Benefits</p>
+              <p>Sitemap</p>
+          </div>
+          <div class="f-card">
+            <h4 style="margin-bottom: 20px ;">INFORMATION</h4>
+            <p>Blog</p>
+            <p>FAQs</p>
+            <p>Documents Required</p>
+            
+        </div>
+        <div class="f-card">
+          <h4 style="margin-bottom: 20px ;">POLICIES</h4>
+          <p>Shipping Policy</p>
+          <p>Cancellation & Return</p>
+          <p>Privacy Policy</p>
+          <p>Rental Terms & Conditions</p>
+          <p>Referral Terms & Conditions</p>
+      </div>
+      <div class="f-card">
+        <h4 style="margin-bottom: 20px ;">NEED HELP ?</h4>
+        <input type="text" placeholder="Chat with us (9AM - 6PM)">
+        <h4 style="margin-bottom: 20px;margin-top: 20px;">DOWNLOAD APP</h4>
+        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.rentomojo&_branch_match_id=1095785377466716906&utm_source=automation&utm_campaign=App%20Download&utm_medium=Website&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL8rNz8rXy8zTL3ILTfYKK052jAQA4IGbfRsAAAA%3D"><img style="width: 120px;border-radius: 8px;" src="/Project 1/imgages/playstor.png" alt=""></a>
+    </div>
+        </div>
+       </div> 
+</body>
+</html>
+
+
+
+
+<script>
+    var smallData = [
+    
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/nt5k5g9b-500x500.jpg",
+      name: "2-Seater Dining Table & Chairs",
+      price: 449,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/qabfne17-500x500.jpg",
+      name: "6-Seater Dining Table & Chairs",
+      price: 1149,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/ex4nji40-500x500.jpg",
+      name: "Fabric Sofa cum Bed (Green)",
+      price: 1049,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/33o6pfrf-500x500.jpg",
+      name: "Barney Leather Recliner (Brown)",
+      price: 799,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/1eoam6o5-500x500.jpg",
+      name: "Leonard Metal Study Table",
+      price: 369,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/ygmpue5m-500x500.jpg",
+      name: "Aurora Wooden Queen Bed (6x5)",
+      price: 539,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/em6h6xgy-500x500.jpg",
+      name: "Stuart Study Table",
+      price: 149,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/nuj33rrq-500x500.jpg",
+      name: "Napster Metal Single Bed (6x3)",
+      price: 249,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/lq1zzhua-500x500.jpg",
+      name: "Vienna Coffee Table",
+      price: 179,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/fscs2rid-500x500.jpg",
+      name: "Espresso Centre Table",
+      price: 149,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/u99cxuq8-500x500.jpg",
+      name: "4-Seater Wooden Coffee Table",
+      price: 549,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/gqrp323i-500x500.jpg",
+      name: "Hiber Wooden Queen Storage Bed (6x5)",
+      price: 929,
+    },
+    {
+      image_url:
+      "https://p.rmjo.in/productSquare/zjw3byn9-500x500.jpg",
+      name: "Kipper Wooden Single Bed (6x3)",
+      price: 609,
+    },
+    {
+      image_url:
+      "https://p.rmjo.in/productSquare/8eeku6mr-500x500.jpg",
+      name: "Rex 3-Seater Sofa (Black)",
+      price: 659,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/cpvebt03-500x500.jpg",
+      name: "Set of 2 Single XL Ortho Mattress",
+      price: 569,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/lj147nta-500x500.jpg",
+      name: "Queen Foam Mattress (6x5)",
+      price: 259,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/fgb0p38q-500x500.jpg",
+      name: "Stowy 2-Door Wardrobe",
+      price: 409,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/ax17ms26-500x500.jpg",
+      name: "Magnum 2-Door Wardrobe",
+      price: 449,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/wz40ng0q-500x500.jpg",
+      name: "Magnum 3-Door Wardrobe",
+      price: 719,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/amzp80bc-500x500.jpg",
+      name: "Oppo Pedestal Table",
+      price: 199,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/ad8riubp-500x500.jpg",
+      name: "Dombas 3-Door Wardrobe",
+      price: 409,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/g74roium-500x500.jpg",
+      name: "PS Cabinet by IKEA",
+      price: 379,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/18fs6dog-500x500.jpg",
+      name: "Rowan Chest of Drawers",
+      price: 209,
+    },
+    
+  ];
+    
+
+    
+      display(smallData); 
+
+    function display(cartData){
+      cartData.forEach((elem,i)=>{
+    let div=document.createElement("div");
+    let img=document.createElement("img");
+    img.setAttribute("src",elem.image_url);
+  
+    let H5=document.createElement("H5");
+    H5.innerText=elem.name;
+    let pdiv=document.createElement("div");
+    pdiv.style.display="flex"
+    pdiv.style.justifyContent="space-between"
+    let p1=document.createElement("p");
+    p1.innerText="₹"+elem.price+"/ mo";
+    let button=document.createElement("button");
+    button.innerText="View"
+    pdiv.append(p1,button);
+    div.append(img,H5,pdiv);
+    document.querySelector("#product-cont").append(div);
+
+    })
+   }
+   function search(){
+    val=document.querySelector("#searchProduct").value;
+    newdata=smallData.filter((elem)=>{
+        return elem.name.toLowerCase().includes(val.toLowerCase())
+    })
+    document.querySelector("#product-cont").innerHTML="";
+    display(newdata)
+  }
+
+</script>
