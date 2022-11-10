@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustRentit</title>
+    <title>JustRentit.com</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         body{
@@ -39,7 +39,7 @@
          #nav>img{
             width: 200px;
          }
-         #nav>button{
+         #nav>a>button{
             width: 120px;
             height: 40px;
             border: none;
@@ -51,23 +51,151 @@
          #carouselExampleIndicators{
             width: 80%;
             margin: auto;
-            margin-top: 20px;
+            margin-top: 40px;
          }
         .carousel-inner>div>img{
             border-radius: 15px;
         }
+
+        #mid{
+          width: 80%;
+          height: auto;
+          margin: 76px auto;
+          /* border: 1px solid black; */
+        }
+        #mid>h3{
+          width: 180px;
+          font-weight: 350;
+        }
+        #mid>hr{
+          width: 110px;
+          float: left;
+          margin-top: 0px;
+          background-color: red;
+          height: 1px;
+          margin-bottom: 0px;
+        }
+        .mid-1{
+          width: 100%;
+          height: auto;
+          /* border: 1px solid red; */
+          margin: 65px auto;
+          display: flex;
+          justify-content: space-between;
+        }
+        .mid-card{
+          width: 32%;
+          text-align: left;
+          /* border: 1px solid green; */
+        }
+        .mid-card>h2{
+          font-size: 18px;
+          font-weight: 400;
+        }
+        .mid-card>p{
+          font-size: 14px;
+          font-weight: 400;
+          opacity: 70%;
+          /* letter-spacing:.1mm */
+        }
+        .mid-card>img{
+          width: 20%;
+          margin-bottom: 20px;
+        }
+
+        #footer-cont{
+          width: 100vw;
+          height: 350px;
+          background-color:rgb(237, 240, 242)
+        }
+        #footer-cont>div{
+          width: 80%;
+          height: auto;
+          margin: auto;
+          /* border: 1px solid black; */
+          display: flex;
+        }
+        .f-card{
+          width: 25%;
+          height: auto;
+          /* border: 1px solid red; */
+          padding-top: 65px;
+        }
+        .f-card>p{
+          opacity: 70%;
+          font-weight: 100;
+          font-size: small;
+          margin: 8px 0px;
+        }
+        .f-card>input{
+          padding: 10px;
+          width: 170px;
+          font-size: small;
+          border-radius: 7px;
+          border: .7px solid black;
+          background-color:rgb(237, 240, 242)
+        }
+        #product-cont{
+          width: 80%;
+          height: auto;
+          margin: auto;
+          /* border: 1px solid black; */
+          margin-top: 50px;
+        }
+        #product-cont{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 15px;
+        row-gap: 17px;
+      }
+      #product-cont>div{
+        width: 98%;
+        /* border: 1px solid red; */
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      }
+      #product-cont>div>img{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      #product-cont>div button{
+        width: 100px;
+        height: 30px;
+        border: .1px solid black;
+        border-radius: 7px;
+        margin-right: 10px;
+      }
+      #product-cont>div>h5{
+        font-size: 16px;
+      }
+      #seemorebtn{
+        margin-left: 140px;
+        margin-top: 15px;
+        width: 150px;
+        height: 40px;
+        border: .1px solid black;
+        border-radius: 8px;
+        color: black;
+        transition: 300ms; 
+      }
+      #seemorebtn:hover{
+        color: red;
+        border: .1px solid red;
+        background-color: white;
+      }
     </style>
 </head>
 <body>
     <div id="nav-cont">
       <div id="nav">
-        <img src="JustRentit.Com.png" alt="">
-        <input type="text" placeholder="Search for products">
-        <div id="cart" style="width: 88px;cursor: pointer; display: flex;align-items: center; justify-content: space-between;">
-            <img style="width:33%;margin-bottom: 7px; display: inline;" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="">
-            <h3 style="display: inline;font-weight: 100;">Cart</h2>
+        <img src="/Project 1/imgages/JustRentit.Com.png" alt="">
+        <input onclick="temp()" type="text" placeholder="Search for products">
+        <div id="cart" style=" margin-top: 10px;width: 80px;cursor: pointer; display: flex;align-items:center; justify-content: space-between;">
+            <img style="width:30%;margin-bottom: 7px; display: inline;" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="">
+            <h4 style="display: inline;font-weight: 100;">Cart</h4>
         </div>
-        <button>Sign Out</button>
+        <a href="login.html"><button>Sign Out</button></a>
       </div>
     </div>
     
@@ -104,10 +232,180 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
+</div>
+        
+        <div id="product-cont"></div> 
+        <a href="products.html"><button id="seemorebtn">See More</button></a>
+
+        <div id="mid">
+            <h3>There's more
+              to renting</h3>
+              <hr>
+              <div class="mid-1">
+                <div class="mid-card">
+                  <img src="/Project 1/imgages/ss1.png" alt="">
+                  <h2>Finest-quality products</h2>
+                  <p>Quality matters to you, and us! That's why we do a strict quality-check for every product.</p>
+                </div>
+                <div class="mid-card">
+                  <img src="/Project 1/imgages/ss2.png" alt="">
+                  <h2>Free relocation</h2>
+                  <p>Changing your house or even your city? We'll relocate your rented products for free.</p>
+                </div>
+                <div class="mid-card">
+                  <img src="/Project 1/imgages/ss3.png" alt="">
+                  <h2>Free maintenance</h2>
+                  <p>Keeping your rented products in a spick and span condition is on us, so you can sit back and relax.</p>
+                </div>
+              </div>
+              <div class="mid-1">
+                <div class="mid-card">
+                  <img src="/Project 1/imgages/ss4.png" alt="">
+                  <h2>Cancel anytime</h2>
+                  <p>Pay only for the time you use the product and close your subscription without any hassle.</p>
+                </div>
+                <div class="mid-card">
+                  <img src="/Project 1/imgages/ss5.png" alt="">
+                  <h2>Easy return on delivery</h2>
+                  <p>If you don't like the product on delivery, you can return it right away—no questions asked.</p>
+                </div>
+                <div class="mid-card">
+                  <img src="/Project 1/imgages/ss6.png" alt="">
+                  <h2>Keep upgrading</h2>
+                  <p>Bored of the same product? Upgrade to try another, newer design and enjoy the change!</p>
+                </div>
+              </div>
           </div>
     
+        <div id="footer-cont">
+          <div>
+            <div class="f-card">
+                <h6 style="margin-bottom: 20px ;">JustRentit</h6>
+                <p>About Us</p>
+                <p>Culture</p>
+                <p>Investors</p>
+                <p>Careers</p>
+                <p>Contact</p>
+                <p>Our Benefits</p>
+                <p>Sitemap</p>
+            </div>
+            <div class="f-card">
+              <h6 style="margin-bottom: 20px ;">INFORMATION</h6>
+              <p>Blog</p>
+              <p>FAQs</p>
+              <p>Documents Required</p>
+              
+          </div>
+          <div class="f-card">
+            <h6 style="margin-bottom: 20px ;">POLICIES</h6>
+            <p>Shipping Policy</p>
+            <p>Cancellation & Return</p>
+            <p>Privacy Policy</p>
+            <p>Rental Terms & Conditions</p>
+            <p>Referral Terms & Conditions</p>
+        </div>
+        <div class="f-card">
+          <h6 style="margin-bottom: 20px ;">NEED HELP ?</h6>
+          <input type="text" placeholder="Chat with us (9AM - 6PM)">
+          <h6 style="margin-bottom: 20px;margin-top: 20px;">DOWNLOAD APP</h6>
+          <a target="_blank" href="https://play.google.com/store/apps/details?id=com.rentomojo&_branch_match_id=1095785377466716906&utm_source=automation&utm_campaign=App%20Download&utm_medium=Website&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL8rNz8rXy8zTL3ILTfYKK052jAQA4IGbfRsAAAA%3D"><img style="width: 120px;border-radius: 8px;" src="/Project 1/imgages/playstor.png" alt=""></a>
+      </div>
+          </div>
+         </div> 
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+   var smallData = [
+    
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/nt5k5g9b-500x500.jpg",
+      name: "2-Seater Dining Table & Chairs",
+      price: 449,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/qabfne17-500x500.jpg",
+      name: "6-Seater Dining Table & Chairs",
+      price: 1149,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/ex4nji40-500x500.jpg",
+      name: "Fabric Sofa cum Bed (Green)",
+      price: 1049,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/33o6pfrf-500x500.jpg",
+      name: "Barney Leather Recliner (Brown)",
+      price: 799,
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/1eoam6o5-500x500.jpg",
+      name: "Leonard Metal Study Table",
+      price: 369,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/ygmpue5m-500x500.jpg",
+      name: "Aurora Wooden Queen Bed (6x5)",
+      price: 539,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/em6h6xgy-500x500.jpg",
+      name: "Stuart Study Table",
+      price: 149,
+      
+    },
+    {
+      image_url:
+        "https://p.rmjo.in/productSquare/nuj33rrq-500x500.jpg",
+      name: "Napster Metal Single Bed (6x3)",
+      price: 249,
+      
+    },
+    
+  ];
+    
+  function temp(){
+    window.location.href="products.html"
+  }
+    
+      display(smallData); 
+
+    function display(cartData){
+      cartData.forEach((elem,i)=>{
+    let div=document.createElement("div");
+    let img=document.createElement("img");
+    img.setAttribute("src",elem.image_url);
+  
+    let H5=document.createElement("H5");
+    H5.innerText=elem.name;
+    let pdiv=document.createElement("div");
+    pdiv.style.display="flex"
+    pdiv.style.justifyContent="space-between"
+    let p1=document.createElement("p");
+    p1.innerText="₹"+elem.price+"/ mo";
+    let button=document.createElement("button");
+    button.innerText="View"
+    pdiv.append(p1,button);
+    div.append(img,H5,pdiv);
+    document.querySelector("#product-cont").append(div);
+
+    });
+   }
+
+    
+ </script>
+
