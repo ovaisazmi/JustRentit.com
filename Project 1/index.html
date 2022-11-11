@@ -25,7 +25,7 @@
             /* border: 1px solid black; */
          }
          #nav>input{
-            width: 600px;
+            width: 640px;
             height: 40px;
             border: .7px solid rgb(149, 186, 226);
             border-radius: 10px;
@@ -399,6 +399,15 @@
     p1.innerText="₹"+elem.price+"/ mo";
     let button=document.createElement("button");
     button.innerText="View"
+
+    button.addEventListener("click",function(){
+      localStorage.setItem("objDisplay",JSON.stringify(elem));
+      // window.location.href="display.html"
+      window.open(
+  'display.html',
+  '_blank' // <- This is what makes it open in a new window.
+);
+})
     pdiv.append(p1,button);
     div.append(img,H5,pdiv);
     document.querySelector("#product-cont").append(div);

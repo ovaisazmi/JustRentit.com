@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All products</title>
     <style>
         body{
             margin: 0px;
@@ -47,6 +47,7 @@
             background-color: rgb(251, 238, 228);
             border-radius: 10px;
             cursor: pointer;
+            font-size: medium;
          }
 
         #footer-cont{
@@ -130,10 +131,10 @@
         <div id="nav">
           <a href="index.html"><img src="/Project 1/imgages/JustRentit.Com.png" alt=""></a>
           <input oninput="search()" type="text" placeholder="Search for products" id="searchProduct">
-          <div id="cart" style=" margin-top: 10px;width: 80px;cursor: pointer; display: flex;align-items:center; justify-content: space-between;">
-              <img style="width:30%;margin-bottom: 7px; display: inline;" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="">
-              <h4 style="display: inline;font-weight: 100;">Cart</h4>
-          </div>
+          <div id="cart" style="height: 30px; margin-top: 10px;width: 80px;cursor: pointer; display: flex;align-items:center; justify-content: space-between;">
+            <img style="width:30%;margin-bottom: 7px; display: inline;" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="">
+            <h2 style="margin-bottom: 25px;display: inline;font-weight: 100;">Cart</h2>
+        </div>
           <a href="login.html"><button>Sign Out</button></a>
         </div>
       </div>
@@ -333,8 +334,6 @@
     
   ];
     
-
-    
       display(smallData); 
 
     function display(cartData){
@@ -352,6 +351,12 @@
     p1.innerText="₹"+elem.price+"/ mo";
     let button=document.createElement("button");
     button.innerText="View"
+
+    button.addEventListener("click",function(){
+      localStorage.setItem("objDisplay",JSON.stringify(elem));
+      // window.location.href="display.html"
+      window.open('display.html','_blank');
+    })
     pdiv.append(p1,button);
     div.append(img,H5,pdiv);
     document.querySelector("#product-cont").append(div);
@@ -366,5 +371,6 @@
     document.querySelector("#product-cont").innerHTML="";
     display(newdata)
   }
+  
 
 </script>
