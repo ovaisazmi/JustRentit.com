@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product page</title>
+    <style>
+        body{
+            margin: 0px;
+            font-family: Muli, sans-serif; 
+        }
+        #nav-cont{
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
+
+        #nav{
+            width: 80vw;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            align-items: center;
+            /* border: 1px solid black; */
+         }
+         #nav>input{
+            width: 600px;
+            height: 40px;
+            border: .7px solid rgb(149, 186, 226);
+            border-radius: 10px;
+            padding: 0px 20px;
+            /* margin-left: 20px ; */
+         }
+         #nav>input:hover{
+            background-color: rgb(234, 243, 253);
+            transition: 500ms;
+         }
+         #nav>a>img{
+            width: 200px;
+         }
+         #nav>a>button{
+            width: 120px;
+            height: 40px;
+            border: none;
+            color: black;
+            background-color: rgb(251, 238, 228);
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: medium;
+         }
+
+        #footer-cont{
+          width: 100vw;
+          height: 350px;
+          background-color:rgb(237, 240, 242)
+        }
+        #footer-cont>div{
+          width: 80%;
+          height: auto;
+          margin: auto;
+          /* border: 1px solid black; */
+          display: flex;
+        }
+        .f-card{
+          width: 25%;
+          height: auto;
+          /* border: 1px solid red; */
+          padding-top: 65px;
+        }
+        .f-card>p{
+          opacity: 70%;
+          font-weight: 100;
+          font-size: small;
+          margin: 8px 0px;
+        }
+        .f-card>input{
+          padding: 10px;
+          width: 170px;
+          font-size: small;
+          border-radius: 7px;
+          border: .7px solid black;
+          background-color:rgb(237, 240, 242)
+        }
+        #product-cont{
+          width: 73%;
+          height: 600px;
+          margin: auto;
+          /* border: 1px solid black; */
+          margin-top: 25px;
+          margin-bottom: 30px;
+          display: flex;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+
+        }
+        #product-cont>div{
+            /* border: 1px solid red; */
+            width: 50%;
+            padding: 10px 30px;
+
+        }
+        #product-cont>div>h2{
+            font-weight: 500;
+        }
+        #product-cont>div>p{
+            font-weight: 300;
+        }
+        #product-cont>div>input{
+            width: 350px;
+          
+        }
+        .one{
+            width: 350px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-between;
+        }
+        #two>div:nth-child(2)>img{
+            width: 15px;
+        }
+        #two>div:nth-child(1){
+            width: 350px;
+            height: 55px;
+            border: .5px solid black;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-top: 20px;
+        }
+        #two>div:nth-child(2){
+            width: 350px;
+            height: 20px;
+            opacity: 60%;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            justify-content: space-between;
+            font-size: small;
+            border: 1px solid black;
+
+        }
+        #three{
+            display: flex;
+            align-items: center;
+            opacity: 70%;
+            font-size: small;
+        }
+        #product-cont>div>button{
+            width: 370px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 5px;
+            border: .1px solid;
+            cursor: pointer;
+            transition: 400ms;
+        }
+        #product-cont>div>button:hover{
+            background-color: rgb(97, 97, 97);
+            color: white;
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="nav-cont">
+        <div id="nav">
+          <a href="index.html"><img src="/Project 1/imgages/JustRentit.Com.png" alt=""></a>
+          <input onclick="move()" type="text" placeholder="Search for products" id="searchProduct">
+          <div id="cart" style="height: 30px; margin-top: 10px;width: 80px;cursor: pointer; display: flex;align-items:center; justify-content: space-between;">
+            <img style="width:30%;margin-bottom: 7px; display: inline;" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="">
+            <h2 style="margin-bottom: 25px;display: inline;font-weight: 100;">Cart</h2>
+        </div>
+          <a href="login.html"><button>Sign Out</button></a>
+        </div>
+      </div>
+
+      <div id="product-cont">
+        <img class="img1"  alt="">
+        <div>
+            <h2 id="h2">Atticus Wooden Single Platform Bed (6x3)</h2>
+             <p>How long do you want to rent this for? (Months)</p> 
+             <input oninput="temp()" id="range" type="range" min="0" max="100" step="50" value="0">  
+             <div class="one" style="width: 330px;margin-left:12px;"><span>|</span><span>|</span><span>|</span></div> 
+             <div class="one" style="margin-left:7px;"><span>3+</span><span>6+</span><span>12+</span></div>
+             <div id="two">
+                <div id="price">₹ 00 / mo</div>
+                <div><img src="https://www.rentomojo.com/public/images/icons/black-tick.svg" alt=""><p>7 Days free trial</p><img src="https://www.rentomojo.com/public/images/icons/black-tick.svg" alt=""><p>Free relocation</p><img src="https://www.rentomojo.com/public/images/icons/black-tick.svg" alt=""><p>Free upgrades</p></div>
+             </div>
+             <div id="three"><img src="https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg" alt=""><p> Delivery in 3 Days</p></div>
+             <button>Book your plan</button>
+        </div>
+      </div>
+
+      <div id="footer-cont">
+        <div>
+          <div class="f-card">
+              <h4 style="margin-bottom: 20px ;">JustRentit</h4>
+              <p>About Us</p>
+              <p>Culture</p>
+              <p>Investors</p>
+              <p>Careers</p>
+              <p>Contact</p>
+              <p>Our Benefits</p>
+              <p>Sitemap</p>
+          </div>
+          <div class="f-card">
+            <h4 style="margin-bottom: 20px ;">INFORMATION</h4>
+            <p>Blog</p>
+            <p>FAQs</p>
+            <p>Documents Required</p>
+            
+        </div>
+        <div class="f-card">
+          <h4 style="margin-bottom: 20px ;">POLICIES</h4>
+          <p>Shipping Policy</p>
+          <p>Cancellation & Return</p>
+          <p>Privacy Policy</p>
+          <p>Rental Terms & Conditions</p>
+          <p>Referral Terms & Conditions</p>
+      </div>
+      <div class="f-card">
+        <h4 style="margin-bottom: 20px ;">NEED HELP ?</h4>
+        <input type="text" placeholder="Chat with us (9AM - 6PM)">
+        <h4 style="margin-bottom: 20px;margin-top: 20px;">DOWNLOAD APP</h4>
+        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.rentomojo&_branch_match_id=1095785377466716906&utm_source=automation&utm_campaign=App%20Download&utm_medium=Website&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL8rNz8rXy8zTL3ILTfYKK052jAQA4IGbfRsAAAA%3D"><img style="width: 120px;border-radius: 8px;" src="/Project 1/imgages/playstor.png" alt=""></a>
+    </div>
+        </div>
+       </div> 
+</body>
+</html>
+
+
+
+
+<script>
+  obj=JSON.parse(localStorage.getItem("objDisplay"));
+    
+    document.querySelector(".img1").setAttribute("src",obj.image_url)
+    document.querySelector("#h2").innerText=obj.name;
+    document.querySelector("#price").innerText="₹"+obj.price+"/ mo";
+
+   
+
+    function temp(){
+    val=document.querySelector("#range").value;
+        if(val==0){
+            document.querySelector("#price").innerText="₹"+obj.price+"/ mo";
+        }
+        else if(val==50){
+            bag=obj.price-obj.price*.10;
+            document.querySelector("#price").innerText="₹"+Math.floor(bag)+"/ mo";
+        }
+        else if(val==100){
+            bag=obj.price-obj.price*.20;
+            document.querySelector("#price").innerText="₹"+Math.floor(bag)+"/ mo";
+        }
+    }
+
+  
+    function move(){
+    window.location.href="products.html"
+  }
+
+
+
+
+
+
+
+
+
+
+//     function display(elem){
+      
+//     let div=document.createElement("div");
+//     let img=document.createElement("img");
+//     img.setAttribute("src",elem.image_url);
+  
+//     let H5=document.createElement("H5");
+//     H5.innerText=elem.name;
+//     let pdiv=document.createElement("div");
+//     pdiv.style.display="flex"
+//     pdiv.style.justifyContent="space-between"
+//     let p1=document.createElement("p");
+//     p1.innerText="₹"+elem.price+"/ mo";
+//     let button=document.createElement("button");
+//     button.innerText="View"
+
+//     button.addEventListener("click",function(){
+//       localStorage.setItem("objDisplay",JSON.stringify(elem));
+//       window.location.href="display.html"
+//     })
+//     pdiv.append(p1,button);
+//     div.append(img,H5,pdiv);
+//     document.querySelector("#product-cont").append(div);
+
+
+//    }
+
+//    function search(){
+    
+//   }
+  
+
+</script>
