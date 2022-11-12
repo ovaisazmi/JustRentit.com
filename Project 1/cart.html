@@ -83,8 +83,8 @@
           background-color:rgb(237, 240, 242)
         }
         #product-cont{
-          width: 73%;
-          height: 600px;
+          width: 75%;
+          height: auto;
           margin: auto;
           /* border: 1px solid black; */
           margin-top: 25px;
@@ -96,8 +96,8 @@
         }
         #product-cont>div{
             /* border: 1px solid red; */
-            width: 50%;
-            padding: 10px 30px;
+            width: 100%;
+            padding-right:10px ;
 
         }
         #product-cont>div>h2{
@@ -110,46 +110,7 @@
             width: 350px;
           
         }
-        .one{
-            width: 350px;
-            /* border: 1px solid black; */
-            display: flex;
-            justify-content: space-between;
-        }
-        #two>div:nth-child(2)>img{
-            width: 15px;
-        }
-        #two>div:nth-child(1){
-            width: 350px;
-            height: 55px;
-            border: .5px solid black;
-            padding-left: 10px;
-            padding-right: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 25px;
-            margin-top: 20px;
-        }
-        #two>div:nth-child(2){
-            width: 350px;
-            height: 20px;
-            opacity: 60%;
-            display: flex;
-            align-items: center;
-            padding-left: 10px;
-            padding-right: 10px;
-            justify-content: space-between;
-            font-size: small;
-            border: 1px solid black;
-
-        }
-        #three{
-            display: flex;
-            align-items: center;
-            opacity: 70%;
-            font-size: small;
-        }
+        
         #product-cont>div>button{
             width: 370px;
             height: 40px;
@@ -163,6 +124,25 @@
             background-color: rgb(97, 97, 97);
             color: white;
         }
+        #container{
+        display: flex;
+        justify-content: center;
+        /* border: 1px solid red; */
+
+      }
+  
+      #cont{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 10px;
+        /* border: 1px solid black; */
+        width: 100%;
+        height: auto;
+        
+      }
+      #cont>div>h5,#cont>div>div>p{
+        font-size: large;
+      }
       
     </style>
 </head>
@@ -171,7 +151,7 @@
         <div id="nav">
           <a href="index.html"><img src="/Project 1/imgages/JustRentit.Com.png" alt=""></a>
           <input onclick="move()" type="text" placeholder="Search for products" id="searchProduct">
-          <div onclick="temp66()" id="cart" style="height: 30px; margin-top: 10px;width: 80px;cursor: pointer; display: flex;align-items:center; justify-content: space-between;">
+          <div id="cart" style="height: 30px; margin-top: 10px;width: 80px;cursor: pointer; display: flex;align-items:center; justify-content: space-between;">
             <img style="width:30%;margin-bottom: 7px; display: inline;" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="">
             <h2 style="margin-bottom: 25px;display: inline;font-weight: 100;">Cart</h2>
         </div>
@@ -180,19 +160,13 @@
       </div>
 
       <div id="product-cont">
-        <img class="img1"  alt="">
-        <div>
-            <h2 id="h2">Atticus Wooden Single Platform Bed (6x3)</h2>
-             <p>How long do you want to rent this for? (Months)</p> 
-             <input oninput="temp()" id="range" type="range" min="0" max="100" step="50" value="0">  
-             <div class="one" style="width: 330px;margin-left:12px;"><span>|</span><span>|</span><span>|</span></div> 
-             <div class="one" style="margin-left:7px;"><span>3+</span><span>6+</span><span>12+</span></div>
-             <div id="two">
-                <div id="price">₹ 00 / mo</div>
-                <div><img src="https://www.rentomojo.com/public/images/icons/black-tick.svg" alt=""><p>7 Days free trial</p><img src="https://www.rentomojo.com/public/images/icons/black-tick.svg" alt=""><p>Free relocation</p><img src="https://www.rentomojo.com/public/images/icons/black-tick.svg" alt=""><p>Free upgrades</p></div>
-             </div>
-             <div id="three"><img src="https://www.rentomojo.com/public/images/fast-delivery/fast-delivery.svg" alt=""><p> Delivery in 3 Days</p></div>
-             <button onclick="Push()">Book your plan</button>
+        <div id="container">
+            <div id="cont"></div>
+            
+         </div>
+         <div>
+            <div style="display: flex;"><h2>Total Items :</h2><h2 id="h1">0</h2></div>
+            <div style="display: flex;"><h2>Total Price :</h2><h2 id="h2">0</h2></div>
         </div>
       </div>
 
@@ -238,48 +212,62 @@
 
 
 <script>
-  obj=JSON.parse(localStorage.getItem("objDisplay"));
-    let cartarr=JSON.parse(localStorage.getItem("cartarr"))||[];
+    let cartarr=JSON.parse(localStorage.getItem("cartarr")) || [];
 
-    document.querySelector(".img1").setAttribute("src",obj.image_url)
-    document.querySelector("#h2").innerText=obj.name;
-    document.querySelector("#price").innerText="₹"+obj.price+"/ mo";
+ display(cartarr); 
 
-   
+function display(cartData){
+  cartData.forEach((elem,i)=>{
+let div=document.createElement("div");
+div.style.display="flex"
+div.style.alignItems="center"
+div.style.boxShadow= "rgba(0, 0, 0, 0.24) 0px 3px 8px"
+div.style.padding="10px"
 
-    function temp(){
-    val=document.querySelector("#range").value;
-        if(val==0){
-            document.querySelector("#price").innerText="₹"+obj.price+"/ mo";
-        }
-        else if(val==50){
-            bag=obj.price-obj.price*.10;
-            document.querySelector("#price").innerText="₹"+Math.floor(bag)+"/ mo";
-        }
-        else if(val==100){
-            bag=obj.price-obj.price*.20;
-            document.querySelector("#price").innerText="₹"+Math.floor(bag)+"/ mo";
-        }
-    }
 
-  
-    function move(){
+div.style.justifyContent="space-between"
+div.style.width="800px"
+let img=document.createElement("img");
+img.setAttribute("src",elem.image_url);
+img.style.width="30%";
+
+let H5=document.createElement("H5");
+H5.innerText=elem.name;
+let pdiv=document.createElement("div");
+pdiv.style.display="flex"
+pdiv.style.width="250px";
+pdiv.style.justifyContent="space-between"
+let p1=document.createElement("p");
+p1.innerText="₹"+elem.price+"/ mo";
+let button=document.createElement("button");
+button.innerText="Delete"
+button.style.width="110px"
+button.style.height="45px"
+button.style.fontSize="18px"
+
+button.addEventListener("click",function(){
+  cartarr.splice(i,1);
+  localStorage.setItem("cartarr",JSON.stringify(cartarr));
+  document.querySelector("#cont").innerHTML="";
+  display(cartarr);
+  doit();
+})
+pdiv.append(p1,button);
+div.append(img,H5,pdiv);
+document.querySelector("#cont").append(div);
+
+})
+}
+doit()
+function doit(){
+  document.querySelector("#h1").innerText=cartarr.length
+  let total=cartarr.reduce((acc,elem)=>{
+    return acc+elem.price;
+  },0)
+  console.log(total)
+  document.querySelector("#h2").innerText=total;
+}
+function move(){
     window.location.href="products.html"
   }
-
-  function Push(){
-    cartarr.push(obj)
-    localStorage.setItem("cartarr",JSON.stringify(cartarr));
-  }
-  function temp66(){
-    window.location.href="cart.html"
-  }
-
-
-
-
-
-
-
-
 </script>

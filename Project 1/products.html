@@ -131,7 +131,7 @@
         <div id="nav">
           <a href="index.html"><img src="/Project 1/imgages/JustRentit.Com.png" alt=""></a>
           <input oninput="search()" type="text" placeholder="Search for products" id="searchProduct">
-          <div id="cart" style="height: 30px; margin-top: 10px;width: 80px;cursor: pointer; display: flex;align-items:center; justify-content: space-between;">
+          <div onclick="temp66()" id="cart" style="height: 30px; margin-top: 10px;width: 80px;cursor: pointer; display: flex;align-items:center; justify-content: space-between;">
             <img style="width:30%;margin-bottom: 7px; display: inline;" src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="">
             <h2 style="margin-bottom: 25px;display: inline;font-weight: 100;">Cart</h2>
         </div>
@@ -261,7 +261,7 @@
     {
       image_url:
         "https://p.rmjo.in/productSquare/gqrp323i-500x500.jpg",
-      name: "Hiber Wooden Queen Storage Bed (6x5)",
+      name: "Wooden Queen Size Bed (6x5)",
       price: 929,
     },
     {
@@ -372,5 +372,8 @@
     display(newdata)
   }
   
+  function temp66(){
+    window.location.href="cart.html"
+  }
 
 </script>
